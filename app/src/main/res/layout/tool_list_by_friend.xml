@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="item"
+            type="himanshu.project.aleph.mytools.data.ToolsBorrowed" />
+
+        <variable
+            name="viemodel"
+            type="himanshu.project.aleph.mytools.viewmodels.FriendsViewModel" />
+
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_list_doc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/card_margin"
+        android:layout_marginLeft="@dimen/card_margin"
+        android:layout_marginRight="@dimen/card_margin"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_card_elevation"
+        app:cardMaxElevation="@dimen/card_card_elevation"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/appbar_padding_top"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tool_name"
+                    android:textColor="@color/colorTxt" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.tools.toolName}"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorTxt" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/appbar_padding_top"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_tool_name"
+                    android:text="@string/total_borrowed_count"
+                    android:textColor="@color/colorTxt" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textView_tool_borrowed_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTxt"
+                    android:textStyle="bold"
+                    app:text="@{Integer.toString(item.borrowedToolCount)}" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/appbar_padding"
+                android:text="@string/tool_loaning_action"
+                android:onClick="@{clickListener}"
+                android:layout_gravity="end"
+                android:textColor="@color/colorTxt"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
+
+

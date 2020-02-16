@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_tools"
+        android:icon="@drawable/ic_tools_white"
+        android:title="@string/tools_fragment_title" />
+
+    <item
+        android:id="@+id/navigation_friend"
+        android:icon="@drawable/ic_friend_white"
+        android:title="@string/friend_fragment_title" />
+
+
+
+</menu>

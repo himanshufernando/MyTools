@@ -1,0 +1,91 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewmodel"
+            type="himanshu.project.aleph.mytools.viewmodels.ToolsViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/appbar_padding_top"
+                android:text="@string/tool_loaning_title"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorTxt"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/appbar_padding_top"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:text="@string/item_name"
+                android:textColor="@color/colorTxt" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/appbar_padding_top"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:text="@{viewmodel.selectedTool.toolName}"
+                android:textColor="@color/colorTxt"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/appbar_padding_top"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:text="@string/select_friend"
+                android:textColor="@color/colorTxt" />
+
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/autoCompleteTextView_friends"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onItemClickListener="@{viewmodel.onFriendItemSelected}"
+                android:layout_marginTop="@dimen/appbar_padding_top"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:layout_marginRight="@dimen/appbar_padding_top"
+                android:imeOptions="flagNoExtractUi"
+                android:completionThreshold="1"
+                android:hint="@string/select_friend"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/appbar_padding"
+                android:text="@string/tool_loaning_action"
+                android:onClick="@{() -> viewmodel.toolLoaning()}"
+                android:layout_gravity="end"
+                android:textColor="@color/colorTxt"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/appbar_padding"
+                android:text="@string/tool_return_all_action"
+                android:onClick="@{() -> viewmodel.setAlltools()}"
+                android:layout_gravity="end"
+                android:textColor="@color/colorTxt"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

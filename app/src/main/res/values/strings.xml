@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">My Tools</string>
+
+
+
+    <string name="tools_fragment_title" >Tools</string>
+    <string name="friend_fragment_title" >Friend</string>
+
+
+    <string name="empty_friend_borrowed_message">Please select friend</string>
+    <string name="tool_count_message">you don\'t have enough tools</string>
+    <string name="tool_loaning_success_message">Tool loaning success</string>
+    <string name="tool_loaning_return_success_message">Tool return success</string>
+    <string name="tool_loaning_no_tool_borrowed">No tools borrowed</string>
+
+    <string name="all_tool_return_success_message">All tool are return successfully</string>
+
+
+    <string name="tool_loaning_title">Tool Loaning</string>
+    <string name="item_name">Item Name</string>
+    <string name="select_friend">Select Friend</string>
+    <string name="tool_loaning_action">OK</string>
+    <string name="tool_return_all_action">Return All</string>
+
+    <string name="tool_borrowed_title">Tool Borrowing</string>
+    <string name="item_friend_name">Friend Name</string>
+
+    <string name="tool_name">Tool Name</string>
+    <string name="tool_total_count">Tool Total Count</string>
+    <string name="total_borrowed_count">Total Borrowed Count</string>
+
+
+
+
+
+
+</resources>
